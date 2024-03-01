@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Picker App</title>
+    <link rel="stylesheet" href="styles.css" />
+   
+  </head>
+  <body>
+    <header style="text-align: center">
+      <h1>Image Picker</h1>
+      <p> Extract beautiful palettes from your photos</p>
+    </header>
+   
+    <div id="container">
+      <div id="leftDiv">
+      <div class="left-top">
+        <div id="colorPalette"></div>
+        <div id="buttons">
+          <button class="add" id="addColorPickerButton" onclick="addColorPicker()">
+            +
+          </button>
+          <button class="remove" id="removeColorPickerButton" onclick="removeColorPicker()">
+            -
+          </button>
+        </div>
+      </div>
+        <label for="imageInput" id="browseImage">Browse Image</label>
+        <input
+          type="file"
+          id="imageInput"
+          accept="image/*"
+          style="display: none"
+        />
+        <button class="export" onclick="exportPalette()">Export Palette</button>
+      </div>
+
+      <div id="rightDiv">
+        <div id="canvasContainer">
+          <canvas id="imageCanvas" width="400" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="csvFormat"></div>
+          <div id="withHashFormat"></div>
+          <div id="arrayFormat"></div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+      <!-- <script src="test.js"></script> -->
+      </body>
+      </html>
